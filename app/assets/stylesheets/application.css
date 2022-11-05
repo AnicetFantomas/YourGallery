@@ -17,6 +17,27 @@ h1 {
     margin: 40px 0;
 }
 
+.bottom-line {
+    width: 90%;
+    height: 6px;
+    background-color: rgb(29, 156, 206);
+    margin: 0 auto;
+    margin: 4% ;
+}
+
+.details {
+    white-space: nowrap; 
+    font-size: 10px;
+}
+
+.my-image {
+    transition: transform ease-in-out 0.5s;
+}
+
+.my-image:hover {
+    transform: scale(1.5);
+}
+
 
 @media only screen and (min-width:321px) and (max-width:768px) { 
     #images {
@@ -30,6 +51,9 @@ h1 {
         justify-content: center;
     }
     
+    .details {
+        font-size: 12px;
+    }
 }
 
 
