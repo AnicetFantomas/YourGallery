@@ -1,5 +1,30 @@
-.cards-container {
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Inter+Tight&family=Roboto+Mono:ital,wght@1,500&display=swap');
+#images {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    background-color: rgb(219, 219, 219);
 }
+
+h1 {
+    text-align: center;
+    font-family: 'Abyssinica SIL', serif;
+    color: rgb(29, 156, 206);
+}
+
+.upload-btn, .submit-btn, .back-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 40px 0;
+}
+
+
+
+@media only screen and (min-width:321px) and (max-width:768px) { 
+    #images {
+        display: grid;
+        grid-template-columns: 1fr;
+    }    
+}
+
 

@@ -1,13 +1,11 @@
 <div id="<% link_to dom_id image, image %>">
-    <div>
-    <%= link_to image_tag(image.image), image.image %>
+    <div class="my-image">
+    <%= link_to image_tag(image.image, style:"width:100%"), image.image  %>
     </div>
-    Title: <%= image.title %>
-
-    <strong>saved date:</strong>
+    <strong><%= image.title %>:</strong>
+    <%= image.description %>,
     <%= image.created_at %>
-
-    <strong>Description:</strong>
-    <%= image.description %>
-
 </div>
+
+
+
