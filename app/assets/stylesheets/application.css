@@ -27,7 +27,7 @@ h1 {
 
 .details {
     white-space: nowrap; 
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .my-image {
@@ -35,7 +35,7 @@ h1 {
 }
 
 .my-image:hover {
-    transform: scale(1.5);
+    transform: scale(1.1);
 }
 
 

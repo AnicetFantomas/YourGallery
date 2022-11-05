@@ -13521,3 +13521,673 @@ Processing by ActiveStorage::DiskController#show as JPEG
 Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 155)
 
 
+Started GET "/images" for 127.0.0.1 at 2022-11-05 20:25:57 +0200
+Processing by ImagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  ↳ app/views/images/index.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 19.8ms | Allocations: 2150)
+  [1m[36mActiveStorage::Attachment Load (2.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 18.8ms | Allocations: 2145)
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 19.1ms | Allocations: 2146)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 14.4ms | Allocations: 2155)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 14.4ms | Allocations: 2144)
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 12.1ms | Allocations: 2145)
+  Rendered images/index.html.erb within layouts/application (Duration: 109.7ms | Allocations: 14135)
+  Rendered layout layouts/application.html.erb (Duration: 114.2ms | Allocations: 15171)
+Completed 200 OK in 117ms (Views: 103.3ms | ActiveRecord: 12.1ms | Allocations: 15431)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjVGt5ZHpKbk0ySnplREJ2TjJrMU1qaDVaR1l6Wm1keWFUUnZjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdlkzUnZjakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGtiMk4wYjNJeUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy42MzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--762363cc6d8596bf0957cbf1977e3b5d9653bfdf/doctor2.jpg" for 127.0.0.1 at 2022-11-05 20:25:58 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVGg2Y25vMVkyRTFjbU5zYzNGaWRIVTRZWEp2YUdwbWQyMWpZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDE4OjI5OjM3LjQ0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--96a1fbd04f0ac06a83979f117bd90320bf104892/94958024.jpeg" for 127.0.0.1 at 2022-11-05 20:25:58 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkekUyZDJ0c2NuTndlSEp0ZVcxMk1uRndiR1F6Y25SNGNtbDVOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWhBQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWEybHpjM0J1WnkxamIyMXdkWFJsY2kxcFkyOXVjeTFvWVcxaWRYSm5aWEl0WW5WMGRHOXVMVzFsYm5VdGMzbHRZbTlzTFdWNGNYVnBjMmwwWlMxdmNIUnBiMjR0WW5WMGRHOXVMVFZoWkdKbE9EY3hNR1JpTnpZNExqWTFPVE0wT1RBMU1UVXlORE0yTVRNeU9UQTFOakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHJhWE56Y0c1bkxXTnZiWEIxZEdWeUxXbGpiMjV6TFdoaGJXSjFjbWRsY2kxaWRYUjBiMjR0YldWdWRTMXplVzFpYjJ3dFpYaHhkV2x6YVhSbExXOXdkR2x2YmkxaWRYUjBiMjR0TldGa1ltVTROekV3WkdJM05qZ3VOalU1TXpRNU1EVXhOVEkwTXpZeE16STVNRFUyTWk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy41NTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--184ee292c4304a7b471e96f830163a9bf50d2316/kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562.jpg" for 127.0.0.1 at 2022-11-05 20:25:58 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOWEExT0dzNWJEZHFaMkZwYVc1a05ucHpiamwzWjJrMWIzaDBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTg6Mjk6MzcuNTg1WiIsInB1ciI6ImJsb2Jfa2V5In19--349f876fd11afcee4aac640ba278383fec8a10bc/logo.png" for 127.0.0.1 at 2022-11-05 20:25:58 +0200
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlamsyT0RVeGFEbGtaSE14TVhVeGMyUjNZemhsYTJwemMzaHhNd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdlltbHNaU0FsTWpneUpUSTVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmJXOWlhV3hsSlRJd0pUSTRNaVV5T1M1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIyLTExLTA1VDE4OjI5OjM3LjY1OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3553e235371a2ae055827ad82680bca48be4fd01/mobile%20(2).png" for 127.0.0.1 at 2022-11-05 20:25:58 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"doctor2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Completed 304 Not Modified in 14ms (ActiveRecord: 0.0ms | Allocations: 1293)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562"}
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"mobile (2)"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Completed 304 Not Modified in 5ms (ActiveRecord: 0.0ms | Allocations: 513)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiSGhzYXpjNGNYcG1hRGRrYjNWc01qRnlhbVl4T1RFM01uVjBiQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5ObGNuWnZiVzkwYjNJdWFuQmxaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzJWeWRtOXRiM1J2Y2k1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy42NzNaIiwicHVyIjoiYmxvYl9rZXkifX0=--27768294760ead9acb3aadd31b6c6d6452e42306/servomotor.jpeg" for 127.0.0.1 at 2022-11-05 20:25:58 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"servomotor"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/images" for 127.0.0.1 at 2022-11-05 20:26:23 +0200
+Processing by ImagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  ↳ app/views/images/index.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 15.8ms | Allocations: 2147)
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 12.5ms | Allocations: 2145)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 12.5ms | Allocations: 2146)
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 16.4ms | Allocations: 2155)
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 14.8ms | Allocations: 2144)
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 16.6ms | Allocations: 2145)
+  Rendered images/index.html.erb within layouts/application (Duration: 97.9ms | Allocations: 14170)
+  Rendered layout layouts/application.html.erb (Duration: 103.5ms | Allocations: 15210)
+Completed 200 OK in 106ms (Views: 95.3ms | ActiveRecord: 9.8ms | Allocations: 15469)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVGg2Y25vMVkyRTFjbU5zYzNGaWRIVTRZWEp2YUdwbWQyMWpZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDE4OjI5OjM3LjQ0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--96a1fbd04f0ac06a83979f117bd90320bf104892/94958024.jpeg" for 127.0.0.1 at 2022-11-05 20:26:23 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjVGt5ZHpKbk0ySnplREJ2TjJrMU1qaDVaR1l6Wm1keWFUUnZjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdlkzUnZjakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGtiMk4wYjNJeUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy42MzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--762363cc6d8596bf0957cbf1977e3b5d9653bfdf/doctor2.jpg" for 127.0.0.1 at 2022-11-05 20:26:23 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"doctor2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkekUyZDJ0c2NuTndlSEp0ZVcxMk1uRndiR1F6Y25SNGNtbDVOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWhBQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWEybHpjM0J1WnkxamIyMXdkWFJsY2kxcFkyOXVjeTFvWVcxaWRYSm5aWEl0WW5WMGRHOXVMVzFsYm5VdGMzbHRZbTlzTFdWNGNYVnBjMmwwWlMxdmNIUnBiMjR0WW5WMGRHOXVMVFZoWkdKbE9EY3hNR1JpTnpZNExqWTFPVE0wT1RBMU1UVXlORE0yTVRNeU9UQTFOakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHJhWE56Y0c1bkxXTnZiWEIxZEdWeUxXbGpiMjV6TFdoaGJXSjFjbWRsY2kxaWRYUjBiMjR0YldWdWRTMXplVzFpYjJ3dFpYaHhkV2x6YVhSbExXOXdkR2x2YmkxaWRYUjBiMjR0TldGa1ltVTROekV3WkdJM05qZ3VOalU1TXpRNU1EVXhOVEkwTXpZeE16STVNRFUyTWk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy41NTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--184ee292c4304a7b471e96f830163a9bf50d2316/kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562.jpg" for 127.0.0.1 at 2022-11-05 20:26:23 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlamsyT0RVeGFEbGtaSE14TVhVeGMyUjNZemhsYTJwemMzaHhNd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdlltbHNaU0FsTWpneUpUSTVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmJXOWlhV3hsSlRJd0pUSTRNaVV5T1M1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIyLTExLTA1VDE4OjI5OjM3LjY1OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3553e235371a2ae055827ad82680bca48be4fd01/mobile%20(2).png" for 127.0.0.1 at 2022-11-05 20:26:23 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"mobile (2)"}
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562"}
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOWEExT0dzNWJEZHFaMkZwYVc1a05ucHpiamwzWjJrMWIzaDBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTg6Mjk6MzcuNTg1WiIsInB1ciI6ImJsb2Jfa2V5In19--349f876fd11afcee4aac640ba278383fec8a10bc/logo.png" for 127.0.0.1 at 2022-11-05 20:26:23 +0200
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiSGhzYXpjNGNYcG1hRGRrYjNWc01qRnlhbVl4T1RFM01uVjBiQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5ObGNuWnZiVzkwYjNJdWFuQmxaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzJWeWRtOXRiM1J2Y2k1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy42NzNaIiwicHVyIjoiYmxvYl9rZXkifX0=--27768294760ead9acb3aadd31b6c6d6452e42306/servomotor.jpeg" for 127.0.0.1 at 2022-11-05 20:26:24 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"servomotor"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2022-11-05 20:27:58 +0200
+Processing by ImagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/_form.html.erb (Duration: 7.9ms | Allocations: 841)
+  Rendered images/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 939)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 1975)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 2237)
+
+
+Started GET "/images" for 127.0.0.1 at 2022-11-05 20:28:01 +0200
+Processing by ImagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  ↳ app/views/images/index.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 11.8ms | Allocations: 2147)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 11.4ms | Allocations: 2145)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 11.7ms | Allocations: 2146)
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 11.0ms | Allocations: 2155)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 11.8ms | Allocations: 2144)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 16.4ms | Allocations: 2145)
+  Rendered images/index.html.erb within layouts/application (Duration: 83.4ms | Allocations: 14144)
+  Rendered layout layouts/application.html.erb (Duration: 87.4ms | Allocations: 15184)
+Completed 200 OK in 90ms (Views: 82.9ms | ActiveRecord: 5.6ms | Allocations: 15444)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkekUyZDJ0c2NuTndlSEp0ZVcxMk1uRndiR1F6Y25SNGNtbDVOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWhBQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWEybHpjM0J1WnkxamIyMXdkWFJsY2kxcFkyOXVjeTFvWVcxaWRYSm5aWEl0WW5WMGRHOXVMVzFsYm5VdGMzbHRZbTlzTFdWNGNYVnBjMmwwWlMxdmNIUnBiMjR0WW5WMGRHOXVMVFZoWkdKbE9EY3hNR1JpTnpZNExqWTFPVE0wT1RBMU1UVXlORE0yTVRNeU9UQTFOakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHJhWE56Y0c1bkxXTnZiWEIxZEdWeUxXbGpiMjV6TFdoaGJXSjFjbWRsY2kxaWRYUjBiMjR0YldWdWRTMXplVzFpYjJ3dFpYaHhkV2x6YVhSbExXOXdkR2x2YmkxaWRYUjBiMjR0TldGa1ltVTROekV3WkdJM05qZ3VOalU1TXpRNU1EVXhOVEkwTXpZeE16STVNRFUyTWk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy41NTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--184ee292c4304a7b471e96f830163a9bf50d2316/kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562.jpg" for 127.0.0.1 at 2022-11-05 20:28:02 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVGg2Y25vMVkyRTFjbU5zYzNGaWRIVTRZWEp2YUdwbWQyMWpZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDE4OjI5OjM3LjQ0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--96a1fbd04f0ac06a83979f117bd90320bf104892/94958024.jpeg" for 127.0.0.1 at 2022-11-05 20:28:02 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlamsyT0RVeGFEbGtaSE14TVhVeGMyUjNZemhsYTJwemMzaHhNd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdlltbHNaU0FsTWpneUpUSTVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmJXOWlhV3hsSlRJd0pUSTRNaVV5T1M1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIyLTExLTA1VDE4OjI5OjM3LjY1OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3553e235371a2ae055827ad82680bca48be4fd01/mobile%20(2).png" for 127.0.0.1 at 2022-11-05 20:28:02 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjVGt5ZHpKbk0ySnplREJ2TjJrMU1qaDVaR1l6Wm1keWFUUnZjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdlkzUnZjakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGtiMk4wYjNJeUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy42MzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--762363cc6d8596bf0957cbf1977e3b5d9653bfdf/doctor2.jpg" for 127.0.0.1 at 2022-11-05 20:28:02 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"mobile (2)"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOWEExT0dzNWJEZHFaMkZwYVc1a05ucHpiamwzWjJrMWIzaDBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTg6Mjk6MzcuNTg1WiIsInB1ciI6ImJsb2Jfa2V5In19--349f876fd11afcee4aac640ba278383fec8a10bc/logo.png" for 127.0.0.1 at 2022-11-05 20:28:02 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"doctor2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Completed 304 Not Modified in 11ms (ActiveRecord: 0.0ms | Allocations: 893)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiSGhzYXpjNGNYcG1hRGRrYjNWc01qRnlhbVl4T1RFM01uVjBiQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5ObGNuWnZiVzkwYjNJdWFuQmxaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzJWeWRtOXRiM1J2Y2k1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy42NzNaIiwicHVyIjoiYmxvYl9rZXkifX0=--27768294760ead9acb3aadd31b6c6d6452e42306/servomotor.jpeg" for 127.0.0.1 at 2022-11-05 20:28:02 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"servomotor"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms | Allocations: 145)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjVGt5ZHpKbk0ySnplREJ2TjJrMU1qaDVaR1l6Wm1keWFUUnZjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdlkzUnZjakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGtiMk4wYjNJeUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy42MzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--762363cc6d8596bf0957cbf1977e3b5d9653bfdf/doctor2.jpg" for 127.0.0.1 at 2022-11-05 20:28:06 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"doctor2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOWEExT0dzNWJEZHFaMkZwYVc1a05ucHpiamwzWjJrMWIzaDBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTg6Mjk6MzcuNTg1WiIsInB1ciI6ImJsb2Jfa2V5In19--349f876fd11afcee4aac640ba278383fec8a10bc/logo.png" for 127.0.0.1 at 2022-11-05 20:28:11 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlamsyT0RVeGFEbGtaSE14TVhVeGMyUjNZemhsYTJwemMzaHhNd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdlltbHNaU0FsTWpneUpUSTVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmJXOWlhV3hsSlRJd0pUSTRNaVV5T1M1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIyLTExLTA1VDE4OjI5OjM3LjY1OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3553e235371a2ae055827ad82680bca48be4fd01/mobile%20(2).png" for 127.0.0.1 at 2022-11-05 20:28:14 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"mobile (2)"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiSGhzYXpjNGNYcG1hRGRrYjNWc01qRnlhbVl4T1RFM01uVjBiQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5ObGNuWnZiVzkwYjNJdWFuQmxaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzJWeWRtOXRiM1J2Y2k1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy42NzNaIiwicHVyIjoiYmxvYl9rZXkifX0=--27768294760ead9acb3aadd31b6c6d6452e42306/servomotor.jpeg" for 127.0.0.1 at 2022-11-05 20:28:18 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"servomotor"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/images" for 127.0.0.1 at 2022-11-05 20:28:58 +0200
+Processing by ImagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  ↳ app/views/images/index.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 15.4ms | Allocations: 2147)
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 14.5ms | Allocations: 2145)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 11.7ms | Allocations: 2146)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 11.8ms | Allocations: 2155)
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 11.4ms | Allocations: 2144)
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 11.1ms | Allocations: 2145)
+  Rendered images/index.html.erb within layouts/application (Duration: 83.8ms | Allocations: 14132)
+  Rendered layout layouts/application.html.erb (Duration: 92.6ms | Allocations: 16440)
+Completed 200 OK in 95ms (Views: 87.9ms | ActiveRecord: 6.8ms | Allocations: 16699)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVGg2Y25vMVkyRTFjbU5zYzNGaWRIVTRZWEp2YUdwbWQyMWpZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDE4OjI5OjM3LjQ0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--96a1fbd04f0ac06a83979f117bd90320bf104892/94958024.jpeg" for 127.0.0.1 at 2022-11-05 20:28:58 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjVGt5ZHpKbk0ySnplREJ2TjJrMU1qaDVaR1l6Wm1keWFUUnZjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdlkzUnZjakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGtiMk4wYjNJeUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy42MzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--762363cc6d8596bf0957cbf1977e3b5d9653bfdf/doctor2.jpg" for 127.0.0.1 at 2022-11-05 20:28:58 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"doctor2"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkekUyZDJ0c2NuTndlSEp0ZVcxMk1uRndiR1F6Y25SNGNtbDVOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWhBQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWEybHpjM0J1WnkxamIyMXdkWFJsY2kxcFkyOXVjeTFvWVcxaWRYSm5aWEl0WW5WMGRHOXVMVzFsYm5VdGMzbHRZbTlzTFdWNGNYVnBjMmwwWlMxdmNIUnBiMjR0WW5WMGRHOXVMVFZoWkdKbE9EY3hNR1JpTnpZNExqWTFPVE0wT1RBMU1UVXlORE0yTVRNeU9UQTFOakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHJhWE56Y0c1bkxXTnZiWEIxZEdWeUxXbGpiMjV6TFdoaGJXSjFjbWRsY2kxaWRYUjBiMjR0YldWdWRTMXplVzFpYjJ3dFpYaHhkV2x6YVhSbExXOXdkR2x2YmkxaWRYUjBiMjR0TldGa1ltVTROekV3WkdJM05qZ3VOalU1TXpRNU1EVXhOVEkwTXpZeE16STVNRFUyTWk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy41NTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--184ee292c4304a7b471e96f830163a9bf50d2316/kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562.jpg" for 127.0.0.1 at 2022-11-05 20:28:58 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiSGhzYXpjNGNYcG1hRGRrYjNWc01qRnlhbVl4T1RFM01uVjBiQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5ObGNuWnZiVzkwYjNJdWFuQmxaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzJWeWRtOXRiM1J2Y2k1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy42NzNaIiwicHVyIjoiYmxvYl9rZXkifX0=--27768294760ead9acb3aadd31b6c6d6452e42306/servomotor.jpeg" for 127.0.0.1 at 2022-11-05 20:28:58 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+Completed 304 Not Modified in 9ms (ActiveRecord: 0.0ms | Allocations: 1013)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+Completed 304 Not Modified in 8ms (ActiveRecord: 0.0ms | Allocations: 730)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOWEExT0dzNWJEZHFaMkZwYVc1a05ucHpiamwzWjJrMWIzaDBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTg6Mjk6MzcuNTg1WiIsInB1ciI6ImJsb2Jfa2V5In19--349f876fd11afcee4aac640ba278383fec8a10bc/logo.png" for 127.0.0.1 at 2022-11-05 20:28:58 +0200
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"servomotor"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlamsyT0RVeGFEbGtaSE14TVhVeGMyUjNZemhsYTJwemMzaHhNd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdlltbHNaU0FsTWpneUpUSTVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmJXOWlhV3hsSlRJd0pUSTRNaVV5T1M1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIyLTExLTA1VDE4OjI5OjM3LjY1OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3553e235371a2ae055827ad82680bca48be4fd01/mobile%20(2).png" for 127.0.0.1 at 2022-11-05 20:28:58 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"mobile (2)"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/images" for 127.0.0.1 at 2022-11-05 20:29:35 +0200
+Processing by ImagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  ↳ app/views/images/index.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 13.1ms | Allocations: 2147)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 12.6ms | Allocations: 2148)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 12.0ms | Allocations: 2146)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 11.8ms | Allocations: 2155)
+  [1m[36mActiveStorage::Attachment Load (5.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 19.9ms | Allocations: 2144)
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 14.2ms | Allocations: 2145)
+  Rendered images/index.html.erb within layouts/application (Duration: 93.2ms | Allocations: 14144)
+  Rendered layout layouts/application.html.erb (Duration: 123.6ms | Allocations: 16449)
+Completed 200 OK in 126ms (Views: 112.2ms | ActiveRecord: 12.5ms | Allocations: 16708)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVGg2Y25vMVkyRTFjbU5zYzNGaWRIVTRZWEp2YUdwbWQyMWpZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDE4OjI5OjM3LjQ0MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--96a1fbd04f0ac06a83979f117bd90320bf104892/94958024.jpeg" for 127.0.0.1 at 2022-11-05 20:29:35 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjVGt5ZHpKbk0ySnplREJ2TjJrMU1qaDVaR1l6Wm1keWFUUnZjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdlkzUnZjakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGtiMk4wYjNJeUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy42MzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--762363cc6d8596bf0957cbf1977e3b5d9653bfdf/doctor2.jpg" for 127.0.0.1 at 2022-11-05 20:29:35 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkekUyZDJ0c2NuTndlSEp0ZVcxMk1uRndiR1F6Y25SNGNtbDVOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWhBQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWEybHpjM0J1WnkxamIyMXdkWFJsY2kxcFkyOXVjeTFvWVcxaWRYSm5aWEl0WW5WMGRHOXVMVzFsYm5VdGMzbHRZbTlzTFdWNGNYVnBjMmwwWlMxdmNIUnBiMjR0WW5WMGRHOXVMVFZoWkdKbE9EY3hNR1JpTnpZNExqWTFPVE0wT1RBMU1UVXlORE0yTVRNeU9UQTFOakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHJhWE56Y0c1bkxXTnZiWEIxZEdWeUxXbGpiMjV6TFdoaGJXSjFjbWRsY2kxaWRYUjBiMjR0YldWdWRTMXplVzFpYjJ3dFpYaHhkV2x6YVhSbExXOXdkR2x2YmkxaWRYUjBiMjR0TldGa1ltVTROekV3WkdJM05qZ3VOalU1TXpRNU1EVXhOVEkwTXpZeE16STVNRFUyTWk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy41NTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--184ee292c4304a7b471e96f830163a9bf50d2316/kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562.jpg" for 127.0.0.1 at 2022-11-05 20:29:35 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlamsyT0RVeGFEbGtaSE14TVhVeGMyUjNZemhsYTJwemMzaHhNd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdlltbHNaU0FsTWpneUpUSTVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmJXOWlhV3hsSlRJd0pUSTRNaVV5T1M1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIyLTExLTA1VDE4OjI5OjM3LjY1OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3553e235371a2ae055827ad82680bca48be4fd01/mobile%20(2).png" for 127.0.0.1 at 2022-11-05 20:29:36 +0200
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"doctor2"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiSGhzYXpjNGNYcG1hRGRrYjNWc01qRnlhbVl4T1RFM01uVjBiQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5ObGNuWnZiVzkwYjNJdWFuQmxaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzJWeWRtOXRiM1J2Y2k1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0xMS0wNVQxODoyOTozNy42NzNaIiwicHVyIjoiYmxvYl9rZXkifX0=--27768294760ead9acb3aadd31b6c6d6452e42306/servomotor.jpeg" for 127.0.0.1 at 2022-11-05 20:29:36 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as PNG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOWEExT0dzNWJEZHFaMkZwYVc1a05ucHpiamwzWjJrMWIzaDBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTg6Mjk6MzcuNTg1WiIsInB1ciI6ImJsb2Jfa2V5In19--349f876fd11afcee4aac640ba278383fec8a10bc/logo.png" for 127.0.0.1 at 2022-11-05 20:29:36 +0200
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"servomotor"}
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"mobile (2)"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+Completed 304 Not Modified in 4ms (ActiveRecord: 0.0ms | Allocations: 519)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3611509626032200200)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20221105184047)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (245.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (65.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (86.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221105184047"]]
+  [1m[36mTRANSACTION (30.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNameToUsers (20221105184252)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.1ms)[0m  [1m[35mALTER TABLE "users" ADD "name" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "surname" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221105184252"]]
+  [1m[36mTRANSACTION (20.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(3611509626032200200)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/signUp" for 127.0.0.1 at 2022-11-05 20:46:38 +0200
+  
+NoMethodError (undefined method `devise_for' for #<ActionDispatch::Routing::Mapper:0x00007fe4d51d5418 @set=#<ActionDispatch::Routing::RouteSet:0x00007fe4d7b66368>, @draw_paths=[#<Pathname:/home/anicetfantomas/Desktop/Microverse Projects/YourGallery/config/routes>], @scope=#<ActionDispatch::Routing::Mapper::Scope:0x00007fe4d51d53a0 @hash={:path_names=>{:new=>"new", :edit=>"edit"}}, @parent=#<ActionDispatch::Routing::Mapper::Scope:0x00007fe4d7aa6b08 @hash=nil, @parent=nil, @scope_level=nil>, @scope_level=nil>, @concerns={}>
+
+  devise_for :users
+  ^^^^^^^^^^):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/users/signUp" for 127.0.0.1 at 2022-11-05 20:47:01 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/signUp"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-05 20:47:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-05 20:47:58 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-05 20:47:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-05 20:48:41 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+Started GET "/users/sign_up?ref=hackernoon.com" for ::1 at 2022-11-05 20:57:38 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-05 20:59:32 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-05 21:05:30 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-11-05 21:05:36 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_in"):
+  
+Started GET "/" for 127.0.0.1 at 2022-11-05 21:12:00 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ImagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (1.2ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  ↳ app/views/images/index.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 655.0ms | Allocations: 25152)
+  [1m[36mActiveStorage::Attachment Load (4.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 21.7ms | Allocations: 2357)
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 14.5ms | Allocations: 2152)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 13.6ms | Allocations: 2166)
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 12.5ms | Allocations: 2150)
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:3
+  Rendered images/_image.html.erb (Duration: 13.2ms | Allocations: 2151)
+  Rendered images/index.html.erb within layouts/application (Duration: 842.7ms | Allocations: 42545)
+  Rendered layout layouts/application.html.erb (Duration: 2681.2ms | Allocations: 71719)
+Completed 200 OK in 3002ms (Views: 2722.1ms | ActiveRecord: 29.6ms | Allocations: 77208)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--67ba4c36827585ed7b394d0dfdbc563dd4aef718/94958024.jpeg" for 127.0.0.1 at 2022-11-05 21:12:04 +0200
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f92f0b2bca7e80195ec0947fb9155947d6f12403/mobile%20(2).png" for 127.0.0.1 at 2022-11-05 21:12:04 +0200
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4af6ffe79f46ca9dde6804779dd50dbd201f0c53/servomotor.jpeg" for 127.0.0.1 at 2022-11-05 21:12:04 +0200
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27709a129322c2945ef86f6618961e3b4caba374/kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562.jpg" for 127.0.0.1 at 2022-11-05 21:12:04 +0200
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c5101997be493765b76d909032726ec2b86b125a/doctor2.jpg" for 127.0.0.1 at 2022-11-05 21:12:04 +0200
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27709a129322c2945ef86f6618961e3b4caba374", "filename"=>"kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562"}
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--67ba4c36827585ed7b394d0dfdbc563dd4aef718", "filename"=>"94958024"}
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c5101997be493765b76d909032726ec2b86b125a", "filename"=>"doctor2"}
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f92f0b2bca7e80195ec0947fb9155947d6f12403", "filename"=>"mobile (2)"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4af6ffe79f46ca9dde6804779dd50dbd201f0c53", "filename"=>"servomotor"}
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (2.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (2.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[36m  Disk Storage (205.8ms) [0m[34mGenerated URL for file at key: z96851h9dds11u1sdwc8ekjssxq3 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlamsyT0RVeGFEbGtaSE14TVhVeGMyUjNZemhsYTJwemMzaHhNd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdlltbHNaU0FsTWpneUpUSTVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmJXOWlhV3hsSlRJd0pUSTRNaVV5T1M1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIyLTExLTA1VDE5OjE3OjA1LjExNFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--62b5f2cf19d3c8bd1898a15b7bb0a269a52bfe27/mobile%20(2).png)[0m
+[36m  Disk Storage (221.6ms) [0m[34mGenerated URL for file at key: i8zrz5ca5rclsqbtu8arohjfwmcb (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVGg2Y25vMVkyRTFjbU5zYzNGaWRIVTRZWEp2YUdwbWQyMWpZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDE5OjE3OjA1LjExN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9a20d0a1f0bcd5bc6d948cadaae4db3173022812/94958024.jpeg)[0m
+[36m  Disk Storage (284.3ms) [0m[34mGenerated URL for file at key: w16wklrspxrmymv2qpld3rtxriy4 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkekUyZDJ0c2NuTndlSEp0ZVcxMk1uRndiR1F6Y25SNGNtbDVOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWhBQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWEybHpjM0J1WnkxamIyMXdkWFJsY2kxcFkyOXVjeTFvWVcxaWRYSm5aWEl0WW5WMGRHOXVMVzFsYm5VdGMzbHRZbTlzTFdWNGNYVnBjMmwwWlMxdmNIUnBiMjR0WW5WMGRHOXVMVFZoWkdKbE9EY3hNR1JpTnpZNExqWTFPVE0wT1RBMU1UVXlORE0yTVRNeU9UQTFOakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHJhWE56Y0c1bkxXTnZiWEIxZEdWeUxXbGpiMjV6TFdoaGJXSjFjbWRsY2kxaWRYUjBiMjR0YldWdWRTMXplVzFpYjJ3dFpYaHhkV2x6YVhSbExXOXdkR2x2YmkxaWRYUjBiMjR0TldGa1ltVTROekV3WkdJM05qZ3VOalU1TXpRNU1EVXhOVEkwTXpZeE16STVNRFUyTWk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0xMS0wNVQxOToxNzowNS4xMTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--5729382ce18b3bf14c91e7e9639c06c060695ab2/kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkekUyZDJ0c2NuTndlSEp0ZVcxMk1uRndiR1F6Y25SNGNtbDVOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWhBQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWEybHpjM0J1WnkxamIyMXdkWFJsY2kxcFkyOXVjeTFvWVcxaWRYSm5aWEl0WW5WMGRHOXVMVzFsYm5VdGMzbHRZbTlzTFdWNGNYVnBjMmwwWlMxdmNIUnBiMjR0WW5WMGRHOXVMVFZoWkdKbE9EY3hNR1JpTnpZNExqWTFPVE0wT1RBMU1UVXlORE0yTVRNeU9UQTFOakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHJhWE56Y0c1bkxXTnZiWEIxZEdWeUxXbGpiMjV6TFdoaGJXSjFjbWRsY2kxaWRYUjBiMjR0YldWdWRTMXplVzFpYjJ3dFpYaHhkV2x6YVhSbExXOXdkR2x2YmkxaWRYUjBiMjR0TldGa1ltVTROekV3WkdJM05qZ3VOalU1TXpRNU1EVXhOVEkwTXpZeE16STVNRFUyTWk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0xMS0wNVQxOToxNzowNS4xMTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--5729382ce18b3bf14c91e7e9639c06c060695ab2/kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562.jpg
+Completed 302 Found in 346ms (ActiveRecord: 1.6ms | Allocations: 22581)
+
+
+[36m  Disk Storage (190.2ms) [0m[34mGenerated URL for file at key: lxlk78qzfh7doul21rjf19172utl (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiSGhzYXpjNGNYcG1hRGRrYjNWc01qRnlhbVl4T1RFM01uVjBiQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5ObGNuWnZiVzkwYjNJdWFuQmxaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzJWeWRtOXRiM1J2Y2k1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0xMS0wNVQxOToxNzowNS4xMjBaIiwicHVyIjoiYmxvYl9rZXkifX0=--25afcb101982769f24c63b664668c454d0e5d09c/servomotor.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiSGhzYXpjNGNYcG1hRGRrYjNWc01qRnlhbVl4T1RFM01uVjBiQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5ObGNuWnZiVzkwYjNJdWFuQmxaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzJWeWRtOXRiM1J2Y2k1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0xMS0wNVQxOToxNzowNS4xMjBaIiwicHVyIjoiYmxvYl9rZXkifX0=--25afcb101982769f24c63b664668c454d0e5d09c/servomotor.jpeg
+Completed 302 Found in 320ms (ActiveRecord: 75.6ms | Allocations: 21821)
+
+
+  [1m[36mActiveStorage::Blob Load (59.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (1.3ms) [0m[34mGenerated URL for file at key: q92w2g3bsx0o7i528ydf3fgri4or (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjVGt5ZHpKbk0ySnplREJ2TjJrMU1qaDVaR1l6Wm1keWFUUnZjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdlkzUnZjakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGtiMk4wYjNJeUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0xMS0wNVQxOToxNzowNS4xMzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--c5c32974b2fc329cda6601c11faea52b1e209539/doctor2.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjVGt5ZHpKbk0ySnplREJ2TjJrMU1qaDVaR1l6Wm1keWFUUnZjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdlkzUnZjakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGtiMk4wYjNJeUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0xMS0wNVQxOToxNzowNS4xMzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--c5c32974b2fc329cda6601c11faea52b1e209539/doctor2.jpg
+Completed 302 Found in 330ms (ActiveRecord: 90.7ms | Allocations: 23600)
+
+
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVGg2Y25vMVkyRTFjbU5zYzNGaWRIVTRZWEp2YUdwbWQyMWpZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDE5OjE3OjA1LjExN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9a20d0a1f0bcd5bc6d948cadaae4db3173022812/94958024.jpeg
+Completed 302 Found in 338ms (ActiveRecord: 22.3ms | Allocations: 24709)
+
+
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlamsyT0RVeGFEbGtaSE14TVhVeGMyUjNZemhsYTJwemMzaHhNd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdlltbHNaU0FsTWpneUpUSTVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmJXOWlhV3hsSlRJd0pUSTRNaVV5T1M1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIyLTExLTA1VDE5OjE3OjA1LjExNFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--62b5f2cf19d3c8bd1898a15b7bb0a269a52bfe27/mobile%20(2).png
+Completed 302 Found in 335ms (ActiveRecord: 63.9ms | Allocations: 24042)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiSGhzYXpjNGNYcG1hRGRrYjNWc01qRnlhbVl4T1RFM01uVjBiQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5ObGNuWnZiVzkwYjNJdWFuQmxaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzJWeWRtOXRiM1J2Y2k1cWNHVm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0xMS0wNVQxOToxNzowNS4xMjBaIiwicHVyIjoiYmxvYl9rZXkifX0=--25afcb101982769f24c63b664668c454d0e5d09c/servomotor.jpeg" for 127.0.0.1 at 2022-11-05 21:12:05 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlamsyT0RVeGFEbGtaSE14TVhVeGMyUjNZemhsYTJwemMzaHhNd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdlltbHNaU0FsTWpneUpUSTVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmJXOWlhV3hsSlRJd0pUSTRNaVV5T1M1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIyLTExLTA1VDE5OjE3OjA1LjExNFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--62b5f2cf19d3c8bd1898a15b7bb0a269a52bfe27/mobile%20(2).png" for 127.0.0.1 at 2022-11-05 21:12:05 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVGg2Y25vMVkyRTFjbU5zYzNGaWRIVTRZWEp2YUdwbWQyMWpZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDE5OjE3OjA1LjExN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9a20d0a1f0bcd5bc6d948cadaae4db3173022812/94958024.jpeg" for 127.0.0.1 at 2022-11-05 21:12:05 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkekUyZDJ0c2NuTndlSEp0ZVcxMk1uRndiR1F6Y25SNGNtbDVOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWhBQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWEybHpjM0J1WnkxamIyMXdkWFJsY2kxcFkyOXVjeTFvWVcxaWRYSm5aWEl0WW5WMGRHOXVMVzFsYm5VdGMzbHRZbTlzTFdWNGNYVnBjMmwwWlMxdmNIUnBiMjR0WW5WMGRHOXVMVFZoWkdKbE9EY3hNR1JpTnpZNExqWTFPVE0wT1RBMU1UVXlORE0yTVRNeU9UQTFOakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHJhWE56Y0c1bkxXTnZiWEIxZEdWeUxXbGpiMjV6TFdoaGJXSjFjbWRsY2kxaWRYUjBiMjR0YldWdWRTMXplVzFpYjJ3dFpYaHhkV2x6YVhSbExXOXdkR2x2YmkxaWRYUjBiMjR0TldGa1ltVTROekV3WkdJM05qZ3VOalU1TXpRNU1EVXhOVEkwTXpZeE16STVNRFUyTWk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0xMS0wNVQxOToxNzowNS4xMTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--5729382ce18b3bf14c91e7e9639c06c060695ab2/kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562.jpg" for 127.0.0.1 at 2022-11-05 21:12:05 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjVGt5ZHpKbk0ySnplREJ2TjJrMU1qaDVaR1l6Wm1keWFUUnZjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdlkzUnZjakl1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGtiMk4wYjNJeUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAyMi0xMS0wNVQxOToxNzowNS4xMzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--c5c32974b2fc329cda6601c11faea52b1e209539/doctor2.jpg" for 127.0.0.1 at 2022-11-05 21:12:05 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"kisspng-computer-icons-hamburger-button-menu-symbol-exquisite-option-button-5adbe8710db768.6593490515243613290562"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 320)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"servomotor"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 155)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"mobile (2)"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 155)
+
+
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"doctor2"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 155)
+
+
+Completed 200 OK in 10ms (ActiveRecord: 0.0ms | Allocations: 1168)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--02ba74abe06fd48adfce6f92a69efad9850b3609/logo.png" for 127.0.0.1 at 2022-11-05 21:12:05 +0200
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--02ba74abe06fd48adfce6f92a69efad9850b3609", "filename"=>"logo"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (1.2ms) [0m[34mGenerated URL for file at key: 5p58k9l7jgaiind6zsn9wgi5oxtu (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOWEExT0dzNWJEZHFaMkZwYVc1a05ucHpiamwzWjJrMWIzaDBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTk6MTc6MDUuNDg3WiIsInB1ciI6ImJsb2Jfa2V5In19--3996298a0137eb30d45eddd98cd2c4738bc4efe0/logo.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOWEExT0dzNWJEZHFaMkZwYVc1a05ucHpiamwzWjJrMWIzaDBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTk6MTc6MDUuNDg3WiIsInB1ciI6ImJsb2Jfa2V5In19--3996298a0137eb30d45eddd98cd2c4738bc4efe0/logo.png
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms | Allocations: 1521)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOWEExT0dzNWJEZHFaMkZwYVc1a05ucHpiamwzWjJrMWIzaDBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTk6MTc6MDUuNDg3WiIsInB1ciI6ImJsb2Jfa2V5In19--3996298a0137eb30d45eddd98cd2c4738bc4efe0/logo.png" for 127.0.0.1 at 2022-11-05 21:12:05 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 155)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-05 21:12:15 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.0ms | Allocations: 253)
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 618)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 271.8ms | Allocations: 9828)
+  Rendered layout layouts/application.html.erb (Duration: 277.8ms | Allocations: 11053)
+Completed 200 OK in 330ms (Views: 281.5ms | ActiveRecord: 11.7ms | Allocations: 17632)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-05 21:17:25 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.5ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 2.2ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 13.8ms | Allocations: 2815)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 4241)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.0ms | Allocations: 5528)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-05 21:17:28 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1433)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 2485)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 3127)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-05 21:17:29 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1433)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 2485)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 3025)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-11-05 21:18:26 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 2.3ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 2478)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 3899)
+Completed 200 OK in 30ms (Views: 27.7ms | Allocations: 5071)
+
+
