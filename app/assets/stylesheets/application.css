@@ -4,6 +4,11 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 h1 {
     text-align: center;
     font-family: 'Abyssinica SIL', serif;
@@ -38,6 +43,19 @@ h1 {
     transform: scale(1.1);
 }
 
+.nav {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-item:hover {
+    border: 2px solid blueviolet;
+}
 
 @media only screen and (min-width:321px) and (max-width:768px) { 
     #images {
