@@ -2,7 +2,6 @@
 #images {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    background-color: rgb(219, 219, 219);
 }
 
 h1 {
@@ -19,12 +18,18 @@ h1 {
 }
 
 
-
 @media only screen and (min-width:321px) and (max-width:768px) { 
     #images {
         display: grid;
         grid-template-columns: 1fr;
     }    
+
+    .my-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
 }
 
 
