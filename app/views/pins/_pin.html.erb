@@ -6,16 +6,17 @@
 
   <p>
     <strong>Description:</strong>
-    <%= pin.body %>
+    <%= pin.description %>
+  </p>
+
+  <p>
+    <strong>Saved at:</strong>
+    <%= pin.created_at %>
   </p>
 
   <br />
 
-  <p>
-    <%= image_tag(pin.image) %>
-  </p>
-
-  <%= pin.pictures.each do |picture| %>
-    <%= picture %>
+  <% pin.pictures.each do |picture| %>
+    <%= link_to image_tag(picture), picture  %>
   <% end %>
 </div>

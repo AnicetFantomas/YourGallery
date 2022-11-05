@@ -352,3 +352,799 @@ Processing by ActiveStorage::DiskController#show as JPEG
 Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 307)
 
 
+Started GET "/" for 127.0.0.1 at 2022-11-05 14:03:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PinsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Load (1.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/pins/index.html.erb:6
+  [1m[36mActionText::RichText Load (0.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:15
+  Rendered pins/_pin.html.erb (Duration: 73.3ms | Allocations: 19341)
+  Rendered pins/index.html.erb within layouts/application (Duration: 108.4ms | Allocations: 24050)
+  Rendered layout layouts/application.html.erb (Duration: 108.8ms | Allocations: 24151)
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 16.8ms | Allocations: 31695)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `persisted?' for nil:NilClass
+
+            named_route = if model.persisted?
+                                  ^^^^^^^^^^^):
+    12:   <br />
+    13: 
+    14:   <p>
+    15:     <%= image_tag(pin.image) %>
+    16:   </p>
+    17: 
+    18:   <%= pin.pictures.each do |picture| %>
+  
+app/views/pins/_pin.html.erb:15
+app/views/pins/index.html.erb:7
+app/views/pins/index.html.erb:6
+Started GET "/" for 127.0.0.1 at 2022-11-05 14:05:29 +0200
+Processing by PinsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Load (0.5ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/pins/index.html.erb:6
+  Rendered pins/_pin.html.erb (Duration: 18.6ms | Allocations: 8016)
+  Rendered pins/index.html.erb within layouts/application (Duration: 47.4ms | Allocations: 10701)
+  Rendered layout layouts/application.html.erb (Duration: 47.9ms | Allocations: 10796)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 8.0ms | Allocations: 14869)
+
+
+  
+ActionView::Template::Error (undefined method `body' for #<Pin id: 5, title: "My birthday", created_at: "2022-11-05 11:07:01.253442000 +0000", updated_at: "2022-11-05 11:07:01.284717000 +0000">):
+     6: 
+     7:   <p>
+     8:     <strong>Description:</strong>
+     9:     <%= pin.body %>
+    10:   </p>
+    11: 
+    12:   <br />
+  
+app/views/pins/_pin.html.erb:9
+app/views/pins/index.html.erb:7
+app/views/pins/index.html.erb:6
+Started GET "/" for 127.0.0.1 at 2022-11-05 14:05:48 +0200
+Processing by PinsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Load (0.4ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/pins/index.html.erb:6
+  [1m[36mActionText::RichText Load (0.7ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 2.3ms | Allocations: 673)
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:18
+  Rendered pins/_pin.html.erb (Duration: 92.1ms | Allocations: 11280)
+  [1m[36mActionText::RichText Load (0.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.3ms | Allocations: 304)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 6], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:18
+  Rendered pins/_pin.html.erb (Duration: 14.9ms | Allocations: 2782)
+  Rendered pins/index.html.erb within layouts/application (Duration: 116.3ms | Allocations: 15788)
+  Rendered layout layouts/application.html.erb (Duration: 239.7ms | Allocations: 39651)
+Completed 200 OK in 245ms (Views: 234.8ms | ActiveRecord: 8.3ms | Allocations: 40567)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-05 14:07:00 +0200
+Processing by PinsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Load (0.5ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/pins/index.html.erb:6
+  [1m[36mActionText::RichText Load (5.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 3.5ms | Allocations: 550)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:15
+  Rendered pins/_pin.html.erb (Duration: 33.8ms | Allocations: 7636)
+  Rendered pins/index.html.erb within layouts/application (Duration: 41.9ms | Allocations: 8998)
+  Rendered layout layouts/application.html.erb (Duration: 42.4ms | Allocations: 9092)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 6.3ms | Allocations: 9949)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `persisted?' for nil:NilClass
+
+            named_route = if model.persisted?
+                                  ^^^^^^^^^^^):
+    12:   <br />
+    13: 
+    14:   <p>
+    15:     <%= image_tag(pin.image)  %>
+    16:   </p>
+    17: 
+    18:   <%= pin.pictures.each do |picture| %>
+  
+app/views/pins/_pin.html.erb:15
+app/views/pins/index.html.erb:7
+app/views/pins/index.html.erb:6
+Started GET "/" for 127.0.0.1 at 2022-11-05 14:12:05 +0200
+Processing by PinsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Load (1.0ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/pins/index.html.erb:6
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 5.4ms | Allocations: 550)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:15
+  Rendered pins/_pin.html.erb (Duration: 170.8ms | Allocations: 26236)
+  [1m[36mActionText::RichText Load (0.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 2.6ms | Allocations: 304)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 6], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:15
+  Rendered pins/_pin.html.erb (Duration: 37.0ms | Allocations: 3907)
+  Rendered pins/index.html.erb within layouts/application (Duration: 246.4ms | Allocations: 34766)
+  Rendered layout layouts/application.html.erb (Duration: 282.0ms | Allocations: 36859)
+Completed 200 OK in 287ms (Views: 285.2ms | ActiveRecord: 28.9ms | Allocations: 37724)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--60d845778bad1d449f029cd4b483b8ac07cb47d0/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:12:06 +0200
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--60d845778bad1d449f029cd4b483b8ac07cb47d0", "filename"=>"94958024"}
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[36m  Disk Storage (50.0ms) [0m[34mGenerated URL for file at key: 6ndvekuo5qdrkg1088lj2g0ln5na (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhObTVrZG1WcmRXODFjV1J5YTJjeE1EZzRiR295WnpCc2JqVnVZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjE3OjA2LjE1OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2ef785d26b24b1b9b516b91336b77fa417f253ff/94958024.jpeg)[0m
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--751daea6ed03d9c87d89de6ce770ce439ba013d9/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:12:06 +0200
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhObTVrZG1WcmRXODFjV1J5YTJjeE1EZzRiR295WnpCc2JqVnVZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjE3OjA2LjE1OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2ef785d26b24b1b9b516b91336b77fa417f253ff/94958024.jpeg
+Completed 302 Found in 75ms (ActiveRecord: 0.8ms | Allocations: 5102)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--751daea6ed03d9c87d89de6ce770ce439ba013d9", "filename"=>"94958024"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[36m  Disk Storage (1.3ms) [0m[34mGenerated URL for file at key: cocexc1ql5klxzn42kt2lpjdcg9k (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZMjlqWlhoak1YRnNOV3RzZUhwdU5ESnJkREpzY0dwa1kyYzVhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjE3OjA2LjE5OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ec131bb9e9d3d0c736fdf63fb5a6c96164f892c4/94958024.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZMjlqWlhoak1YRnNOV3RzZUhwdU5ESnJkREpzY0dwa1kyYzVhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjE3OjA2LjE5OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ec131bb9e9d3d0c736fdf63fb5a6c96164f892c4/94958024.jpeg
+Completed 302 Found in 13ms (ActiveRecord: 0.9ms | Allocations: 1344)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhObTVrZG1WcmRXODFjV1J5YTJjeE1EZzRiR295WnpCc2JqVnVZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjE3OjA2LjE1OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2ef785d26b24b1b9b516b91336b77fa417f253ff/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:12:06 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZMjlqWlhoak1YRnNOV3RzZUhwdU5ESnJkREpzY0dwa1kyYzVhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjE3OjA2LjE5OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ec131bb9e9d3d0c736fdf63fb5a6c96164f892c4/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:12:06 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms | Allocations: 601)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms | Allocations: 477)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-11-05 14:12:31 +0200
+Processing by PinsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/new.html.erb within layouts/application
+  Rendered pins/_form.html.erb (Duration: 42.5ms | Allocations: 3562)
+  Rendered pins/new.html.erb within layouts/application (Duration: 72.1ms | Allocations: 3929)
+  Rendered layout layouts/application.html.erb (Duration: 78.9ms | Allocations: 5732)
+Completed 200 OK in 86ms (Views: 84.8ms | ActiveRecord: 0.0ms | Allocations: 6163)
+
+
+Started GET "/pins/6" for 127.0.0.1 at 2022-11-05 14:12:35 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPin Load (0.8ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE "pins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:63:in `set_pin'
+  Rendering layout layouts/application.html.erb
+  Rendering pins/show.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.7ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.7ms | Allocations: 304)
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 6], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:15
+  Rendered pins/_pin.html.erb (Duration: 21.8ms | Allocations: 3749)
+  Rendered pins/show.html.erb within layouts/application (Duration: 46.2ms | Allocations: 4571)
+  Rendered layout layouts/application.html.erb (Duration: 52.8ms | Allocations: 6262)
+Completed 200 OK in 65ms (Views: 52.3ms | ActiveRecord: 2.8ms | Allocations: 7885)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZMjlqWlhoak1YRnNOV3RzZUhwdU5ESnJkREpzY0dwa1kyYzVhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjE3OjA2LjE5OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ec131bb9e9d3d0c736fdf63fb5a6c96164f892c4/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:12:35 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms | Allocations: 502)
+
+
+Started DELETE "/pins/6" for 127.0.0.1 at 2022-11-05 14:12:36 +0200
+Processing by PinsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"6"}
+  [1m[36mPin Load (0.5ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE "pins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:63:in `set_pin'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Pin"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 6], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mActiveStorage::Attachment Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mActionText::RichText Load (0.9ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 6], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mActionText::RichText Destroy (0.5ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mPin Destroy (0.5ms)[0m  [1m[31mDELETE FROM "pins" WHERE "pins"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (21.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 1e2de6ff-4ba6-4763-b440-ea69e2bcaf86) to Async(default) with arguments: #<GlobalID:0x00007f5b48bc9af8 @uri=#<URI::GID gid://project/ActiveStorage::Blob/9>>
+Redirected to http://127.0.0.1:3000/pins
+Completed 302 Found in 89ms (ActiveRecord: 28.8ms | Allocations: 12422)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [1e2de6ff-4ba6-4763-b440-ea69e2bcaf86]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [1e2de6ff-4ba6-4763-b440-ea69e2bcaf86] Performing ActiveStorage::PurgeJob (Job ID: 1e2de6ff-4ba6-4763-b440-ea69e2bcaf86) from Async(default) enqueued at 2022-11-05T12:12:36Z with arguments: #<GlobalID:0x00007f5b48b775c8 @uri=#<URI::GID gid://project/ActiveStorage::Blob/9>>
+[ActiveJob] [ActiveStorage::PurgeJob] [1e2de6ff-4ba6-4763-b440-ea69e2bcaf86]   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [1e2de6ff-4ba6-4763-b440-ea69e2bcaf86]   [1m[36mActiveStorage::Attachment Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 9], ["LIMIT", 1]]
+Started GET "/pins" for 127.0.0.1 at 2022-11-05 14:12:37 +0200
+Processing by PinsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/index.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::PurgeJob] [1e2de6ff-4ba6-4763-b440-ea69e2bcaf86]   [1m[36mActiveStorage::VariantRecord Load (0.6ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1[0m  [["blob_id", 9]]
+[ActiveJob] [ActiveStorage::PurgeJob] [1e2de6ff-4ba6-4763-b440-ea69e2bcaf86]   [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+  [1m[36mPin Load (1.0ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/pins/index.html.erb:6
+[ActiveJob] [ActiveStorage::PurgeJob] [1e2de6ff-4ba6-4763-b440-ea69e2bcaf86]   [1m[36mActiveStorage::Blob Destroy (5.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 9]]
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.9ms | Allocations: 306)
+[ActiveJob] [ActiveStorage::PurgeJob] [1e2de6ff-4ba6-4763-b440-ea69e2bcaf86]   [1m[36mTRANSACTION (9.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "pictures"]]
+[ActiveJob] [ActiveStorage::PurgeJob] [1e2de6ff-4ba6-4763-b440-ea69e2bcaf86] [36m  Disk Storage (1.9ms) [0m[31mDeleted file from key: cocexc1ql5klxzn42kt2lpjdcg9k[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [1e2de6ff-4ba6-4763-b440-ea69e2bcaf86] [36m  Disk Storage (0.1ms) [0m[31mDeleted files by key prefix: variants/cocexc1ql5klxzn42kt2lpjdcg9k/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [1e2de6ff-4ba6-4763-b440-ea69e2bcaf86] Performed ActiveStorage::PurgeJob (Job ID: 1e2de6ff-4ba6-4763-b440-ea69e2bcaf86) from Async(default) in 94.44ms
+  ↳ app/views/pins/_pin.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:15
+  Rendered pins/_pin.html.erb (Duration: 28.8ms | Allocations: 5634)
+  Rendered pins/index.html.erb within layouts/application (Duration: 68.6ms | Allocations: 14689)
+  Rendered layout layouts/application.html.erb (Duration: 74.8ms | Allocations: 16488)
+Completed 200 OK in 81ms (Views: 55.0ms | ActiveRecord: 24.7ms | Allocations: 16823)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhObTVrZG1WcmRXODFjV1J5YTJjeE1EZzRiR295WnpCc2JqVnVZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjE3OjA2LjE1OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2ef785d26b24b1b9b516b91336b77fa417f253ff/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:12:37 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms | Allocations: 501)
+
+
+Started DELETE "/pins/6" for 127.0.0.1 at 2022-11-05 14:12:43 +0200
+Processing by PinsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"6"}
+  [1m[36mPin Load (0.6ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE "pins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:63:in `set_pin'
+Completed 404 Not Found in 8ms (ActiveRecord: 0.6ms | Allocations: 1216)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pin with 'id'=6):
+  
+app/controllers/pins_controller.rb:63:in `set_pin'
+Started GET "/pins/6" for 127.0.0.1 at 2022-11-05 14:12:53 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPin Load (0.5ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE "pins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:63:in `set_pin'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms | Allocations: 933)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pin with 'id'=6):
+  
+app/controllers/pins_controller.rb:63:in `set_pin'
+Started GET "/" for 127.0.0.1 at 2022-11-05 14:12:58 +0200
+Processing by PinsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Load (0.8ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/pins/index.html.erb:6
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.4ms | Allocations: 268)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:15
+  Rendered pins/_pin.html.erb (Duration: 22.3ms | Allocations: 3561)
+  Rendered pins/index.html.erb within layouts/application (Duration: 34.0ms | Allocations: 4496)
+  Rendered layout layouts/application.html.erb (Duration: 40.0ms | Allocations: 6208)
+Completed 200 OK in 42ms (Views: 38.3ms | ActiveRecord: 3.0ms | Allocations: 6477)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhObTVrZG1WcmRXODFjV1J5YTJjeE1EZzRiR295WnpCc2JqVnVZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjE3OjA2LjE1OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2ef785d26b24b1b9b516b91336b77fa417f253ff/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:12:58 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms | Allocations: 479)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-11-05 14:13:01 +0200
+Processing by PinsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/new.html.erb within layouts/application
+  Rendered pins/_form.html.erb (Duration: 8.9ms | Allocations: 1605)
+  Rendered pins/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1713)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 3410)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 3684)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-11-05 14:14:52 +0200
+Processing by PinsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/new.html.erb within layouts/application
+  Rendered pins/_form.html.erb (Duration: 6.0ms | Allocations: 1616)
+  Rendered pins/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1974)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 4006)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 4837)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-11-05 14:15:33 +0200
+Processing by PinsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/new.html.erb within layouts/application
+  Rendered pins/_form.html.erb (Duration: 36.5ms | Allocations: 11398)
+  Rendered pins/new.html.erb within layouts/application (Duration: 38.7ms | Allocations: 11769)
+  Rendered layout layouts/application.html.erb (Duration: 49.0ms | Allocations: 13839)
+Completed 200 OK in 54ms (Views: 52.4ms | ActiveRecord: 0.0ms | Allocations: 14696)
+
+
+Started POST "/pins" for 127.0.0.1 at 2022-11-05 14:16:05 +0200
+Processing by PinsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pin"=>{"title"=>"asd", "description"=>"sdfasf", "pictures"=>["", #<ActionDispatch::Http::UploadedFile:0x00007f5b48b7b358 @tempfile=#<Tempfile:/tmp/RackMultipart20221105-35223-rwx0gh.png>, @original_filename="logo.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"pin[pictures][]\"; filename=\"logo.png\"\r\nContent-Type: image/png\r\n">]}, "commit"=>"Create Pin"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mPin Create (1.0ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "asd"], ["created_at", "2022-11-05 12:16:05.416767"], ["updated_at", "2022-11-05 12:16:05.416767"]]
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mActionText::RichText Create (1.0ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "description"], ["body", "sdfasf"], ["record_type", "Pin"], ["record_id", 7], ["created_at", "2022-11-05 12:16:05.465354"], ["updated_at", "2022-11-05 12:16:05.465354"]]
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "vlhxwne0d7zxb8cbfk8wfo8o2otj"], ["filename", "logo.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 25652], ["checksum", "m5y4rSvGKH7fuy7k2rhnNA=="], ["created_at", "2022-11-05 12:16:05.478840"]]
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Attachment Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "pictures"], ["record_type", "Pin"], ["record_id", 7], ["blob_id", 10], ["created_at", "2022-11-05 12:16:05.484391"]]
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mPin Update (1.1ms)[0m  [1m[33mUPDATE "pins" SET "updated_at" = $1 WHERE "pins"."id" = $2[0m  [["updated_at", "2022-11-05 12:16:05.490819"], ["id", 7]]
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (41.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+[36m  Disk Storage (0.8ms) [0m[32mUploaded file to key: vlhxwne0d7zxb8cbfk8wfo8o2otj (checksum: m5y4rSvGKH7fuy7k2rhnNA==)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Blob Update (1.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 10]]
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/pins/7
+Completed 302 Found in 162ms (ActiveRecord: 55.3ms | Allocations: 16163)
+
+
+Started GET "/pins/7" for 127.0.0.1 at 2022-11-05 14:16:05 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPin Load (0.5ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE "pins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:63:in `set_pin'
+  Rendering layout layouts/application.html.erb
+  Rendering pins/show.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 3.3ms | Allocations: 549)
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:15
+  Rendered pins/_pin.html.erb (Duration: 21.7ms | Allocations: 4437)
+  Rendered pins/show.html.erb within layouts/application (Duration: 39.9ms | Allocations: 5390)
+  Rendered layout layouts/application.html.erb (Duration: 45.1ms | Allocations: 7183)
+Completed 200 OK in 50ms (Views: 44.8ms | ActiveRecord: 2.0ms | Allocations: 8129)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3064c9705e38806aa346c2ab336da49fd9857a1d/logo.png" for 127.0.0.1 at 2022-11-05 14:16:05 +0200
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3064c9705e38806aa346c2ab336da49fd9857a1d", "filename"=>"logo"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[36m  Disk Storage (1.2ms) [0m[34mGenerated URL for file at key: vlhxwne0d7zxb8cbfk8wfo8o2otj (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbXhvZUhkdVpUQmtOM3A0WWpoalltWnJPSGRtYnpodk1tOTBhZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTI6MjE6MDUuNzM0WiIsInB1ciI6ImJsb2Jfa2V5In19--98ac91fb59639b508c527e9c6088b4a9570b06ac/logo.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbXhvZUhkdVpUQmtOM3A0WWpoalltWnJPSGRtYnpodk1tOTBhZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTI6MjE6MDUuNzM0WiIsInB1ciI6ImJsb2Jfa2V5In19--98ac91fb59639b508c527e9c6088b4a9570b06ac/logo.png
+Completed 302 Found in 12ms (ActiveRecord: 0.7ms | Allocations: 1371)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbXhvZUhkdVpUQmtOM3A0WWpoalltWnJPSGRtYnpodk1tOTBhZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTI6MjE6MDUuNzM0WiIsInB1ciI6ImJsb2Jfa2V5In19--98ac91fb59639b508c527e9c6088b4a9570b06ac/logo.png" for 127.0.0.1 at 2022-11-05 14:16:05 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 169)
+
+
+Started GET "/pins/7" for 127.0.0.1 at 2022-11-05 14:16:35 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPin Load (0.7ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE "pins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:63:in `set_pin'
+  Rendering layout layouts/application.html.erb
+  Rendering pins/show.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.8ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 3.1ms | Allocations: 550)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:15
+  Rendered pins/_pin.html.erb (Duration: 25.3ms | Allocations: 4563)
+  Rendered pins/show.html.erb within layouts/application (Duration: 31.0ms | Allocations: 5548)
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 7579)
+Completed 200 OK in 52ms (Views: 42.9ms | ActiveRecord: 2.7ms | Allocations: 8923)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbXhvZUhkdVpUQmtOM3A0WWpoalltWnJPSGRtYnpodk1tOTBhZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTI6MjE6MDUuNzM0WiIsInB1ciI6ImJsb2Jfa2V5In19--98ac91fb59639b508c527e9c6088b4a9570b06ac/logo.png" for 127.0.0.1 at 2022-11-05 14:16:35 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 169)
+
+
+Started GET "/pins" for 127.0.0.1 at 2022-11-05 14:17:09 +0200
+Processing by PinsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Load (0.5ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/pins/index.html.erb:6
+  [1m[36mActionText::RichText Load (0.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.2ms | Allocations: 268)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:15
+  Rendered pins/_pin.html.erb (Duration: 23.0ms | Allocations: 3514)
+  [1m[36mActionText::RichText Load (0.8ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.2ms | Allocations: 268)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:15
+  Rendered pins/_pin.html.erb (Duration: 19.9ms | Allocations: 3518)
+  Rendered pins/index.html.erb within layouts/application (Duration: 52.6ms | Allocations: 8293)
+  Rendered layout layouts/application.html.erb (Duration: 58.6ms | Allocations: 9990)
+Completed 200 OK in 62ms (Views: 56.1ms | ActiveRecord: 4.0ms | Allocations: 10345)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--60d845778bad1d449f029cd4b483b8ac07cb47d0/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:17:09 +0200
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--60d845778bad1d449f029cd4b483b8ac07cb47d0", "filename"=>"94958024"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[36m  Disk Storage (1.6ms) [0m[34mGenerated URL for file at key: 6ndvekuo5qdrkg1088lj2g0ln5na (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhObTVrZG1WcmRXODFjV1J5YTJjeE1EZzRiR295WnpCc2JqVnVZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjIyOjA5LjY0NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--f8f29d9782880b079e549415a2c4c4ad6a6dc076/94958024.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhObTVrZG1WcmRXODFjV1J5YTJjeE1EZzRiR295WnpCc2JqVnVZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjIyOjA5LjY0NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--f8f29d9782880b079e549415a2c4c4ad6a6dc076/94958024.jpeg
+Completed 302 Found in 15ms (ActiveRecord: 0.7ms | Allocations: 1375)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhObTVrZG1WcmRXODFjV1J5YTJjeE1EZzRiR295WnpCc2JqVnVZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjIyOjA5LjY0NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--f8f29d9782880b079e549415a2c4c4ad6a6dc076/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:17:09 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms | Allocations: 484)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbXhvZUhkdVpUQmtOM3A0WWpoalltWnJPSGRtYnpodk1tOTBhZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTI6MjE6MDUuNzM0WiIsInB1ciI6ImJsb2Jfa2V5In19--98ac91fb59639b508c527e9c6088b4a9570b06ac/logo.png" for 127.0.0.1 at 2022-11-05 14:17:09 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 145)
+
+
+Started GET "/pins" for 127.0.0.1 at 2022-11-05 14:18:43 +0200
+Processing by PinsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Load (0.4ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/pins/index.html.erb:6
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 2.8ms | Allocations: 550)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:20
+  Rendered pins/_pin.html.erb (Duration: 24.8ms | Allocations: 4541)
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 2.4ms | Allocations: 268)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:20
+  Rendered pins/_pin.html.erb (Duration: 19.7ms | Allocations: 3531)
+  Rendered pins/index.html.erb within layouts/application (Duration: 53.7ms | Allocations: 9638)
+  Rendered layout layouts/application.html.erb (Duration: 61.1ms | Allocations: 11678)
+Completed 200 OK in 67ms (Views: 62.5ms | ActiveRecord: 3.0ms | Allocations: 12522)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhObTVrZG1WcmRXODFjV1J5YTJjeE1EZzRiR295WnpCc2JqVnVZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjIyOjA5LjY0NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--f8f29d9782880b079e549415a2c4c4ad6a6dc076/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:18:44 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbXhvZUhkdVpUQmtOM3A0WWpoalltWnJPSGRtYnpodk1tOTBhZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTI6MjE6MDUuNzM0WiIsInB1ciI6ImJsb2Jfa2V5In19--98ac91fb59639b508c527e9c6088b4a9570b06ac/logo.png" for 127.0.0.1 at 2022-11-05 14:18:44 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 509)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 143)
+
+
+Started GET "/pins/5" for 127.0.0.1 at 2022-11-05 14:18:54 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPin Load (0.5ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE "pins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:63:in `set_pin'
+  Rendering layout layouts/application.html.erb
+  Rendering pins/show.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.1ms | Allocations: 268)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:20
+  Rendered pins/_pin.html.erb (Duration: 16.9ms | Allocations: 3517)
+  Rendered pins/show.html.erb within layouts/application (Duration: 21.9ms | Allocations: 4277)
+  Rendered layout layouts/application.html.erb (Duration: 52.7ms | Allocations: 5966)
+Completed 200 OK in 60ms (Views: 52.8ms | ActiveRecord: 1.6ms | Allocations: 6831)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhObTVrZG1WcmRXODFjV1J5YTJjeE1EZzRiR295WnpCc2JqVnVZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjIyOjA5LjY0NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--f8f29d9782880b079e549415a2c4c4ad6a6dc076/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:18:54 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 404 Not Found in 16ms (ActiveRecord: 0.0ms | Allocations: 477)
+
+
+Started DELETE "/pins/5" for 127.0.0.1 at 2022-11-05 14:18:55 +0200
+Processing by PinsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mPin Load (2.5ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE "pins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:63:in `set_pin'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mActiveStorage::Attachment Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mActionText::RichText Destroy (1.7ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mPin Destroy (1.3ms)[0m  [1m[31mDELETE FROM "pins" WHERE "pins"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (22.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52:in `destroy'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 6265fa1e-6ad4-4502-8317-9d9c8426d702) to Async(default) with arguments: #<GlobalID:0x00007f5b4a858b10 @uri=#<URI::GID gid://project/ActiveStorage::Blob/8>>
+Redirected to http://127.0.0.1:3000/pins
+Completed 302 Found in 139ms (ActiveRecord: 34.7ms | Allocations: 9472)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [6265fa1e-6ad4-4502-8317-9d9c8426d702]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6265fa1e-6ad4-4502-8317-9d9c8426d702] Performing ActiveStorage::PurgeJob (Job ID: 6265fa1e-6ad4-4502-8317-9d9c8426d702) from Async(default) enqueued at 2022-11-05T12:18:55Z with arguments: #<GlobalID:0x00007f5b4a7270c0 @uri=#<URI::GID gid://project/ActiveStorage::Blob/8>>
+[ActiveJob] [ActiveStorage::PurgeJob] [6265fa1e-6ad4-4502-8317-9d9c8426d702]   [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+Started GET "/pins" for 127.0.0.1 at 2022-11-05 14:18:55 +0200
+Processing by PinsController#index as HTML
+[ActiveJob] [ActiveStorage::PurgeJob] [6265fa1e-6ad4-4502-8317-9d9c8426d702]   [1m[36mActiveStorage::Attachment Exists? (8.4ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering pins/index.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::PurgeJob] [6265fa1e-6ad4-4502-8317-9d9c8426d702]   [1m[36mActiveStorage::VariantRecord Load (4.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1[0m  [["blob_id", 8]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6265fa1e-6ad4-4502-8317-9d9c8426d702]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6265fa1e-6ad4-4502-8317-9d9c8426d702]   [1m[36mActiveStorage::Blob Destroy (5.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 8]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6265fa1e-6ad4-4502-8317-9d9c8426d702]   [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6265fa1e-6ad4-4502-8317-9d9c8426d702] [36m  Disk Storage (1.3ms) [0m[31mDeleted file from key: 6ndvekuo5qdrkg1088lj2g0ln5na[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6265fa1e-6ad4-4502-8317-9d9c8426d702] [36m  Disk Storage (0.2ms) [0m[31mDeleted files by key prefix: variants/6ndvekuo5qdrkg1088lj2g0ln5na/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6265fa1e-6ad4-4502-8317-9d9c8426d702] Performed ActiveStorage::PurgeJob (Job ID: 6265fa1e-6ad4-4502-8317-9d9c8426d702) from Async(default) in 63.88ms
+  [1m[36mPin Load (2.0ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/pins/index.html.erb:6
+  [1m[36mActionText::RichText Load (0.8ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.3ms | Allocations: 268)
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:20
+  Rendered pins/_pin.html.erb (Duration: 28.2ms | Allocations: 3587)
+  Rendered pins/index.html.erb within layouts/application (Duration: 68.7ms | Allocations: 11330)
+  Rendered layout layouts/application.html.erb (Duration: 75.4ms | Allocations: 13042)
+Completed 200 OK in 83ms (Views: 59.4ms | ActiveRecord: 18.4ms | Allocations: 14240)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbXhvZUhkdVpUQmtOM3A0WWpoalltWnJPSGRtYnpodk1tOTBhZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTI6MjE6MDUuNzM0WiIsInB1ciI6ImJsb2Jfa2V5In19--98ac91fb59639b508c527e9c6088b4a9570b06ac/logo.png" for 127.0.0.1 at 2022-11-05 14:18:55 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 145)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-11-05 14:19:39 +0200
+Processing by PinsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/new.html.erb within layouts/application
+  Rendered pins/_form.html.erb (Duration: 12.4ms | Allocations: 2021)
+  Rendered pins/new.html.erb within layouts/application (Duration: 15.0ms | Allocations: 2335)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 4032)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms | Allocations: 4359)
+
+
+Started POST "/pins" for 127.0.0.1 at 2022-11-05 14:20:40 +0200
+Processing by PinsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pin"=>{"title"=>"The last weekend", "description"=>"The one passed with my mum", "pictures"=>["", #<ActionDispatch::Http::UploadedFile:0x00007f5b48c891f0 @tempfile=#<Tempfile:/tmp/RackMultipart20221105-35223-6us8f7.jpeg>, @original_filename="94958024.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"pin[pictures][]\"; filename=\"94958024.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"Create Pin"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mPin Create (2.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "The last weekend"], ["created_at", "2022-11-05 12:20:40.879795"], ["updated_at", "2022-11-05 12:20:40.879795"]]
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mActionText::RichText Create (1.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "description"], ["body", "The one passed with my mum"], ["record_type", "Pin"], ["record_id", 8], ["created_at", "2022-11-05 12:20:40.891203"], ["updated_at", "2022-11-05 12:20:40.891203"]]
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 8], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Blob Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "67q2w2q85v7825ii2hshdypjh276"], ["filename", "94958024.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 14294], ["checksum", "Z/IMZFo0sa+s1nzZ5VuI4Q=="], ["created_at", "2022-11-05 12:20:40.907809"]]
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Attachment Create (1.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "pictures"], ["record_type", "Pin"], ["record_id", 8], ["blob_id", 11], ["created_at", "2022-11-05 12:20:40.914050"]]
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mPin Update (0.7ms)[0m  [1m[33mUPDATE "pins" SET "updated_at" = $1 WHERE "pins"."id" = $2[0m  [["updated_at", "2022-11-05 12:20:40.920853"], ["id", 8]]
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+[36m  Disk Storage (0.7ms) [0m[32mUploaded file to key: 67q2w2q85v7825ii2hshdypjh276 (checksum: Z/IMZFo0sa+s1nzZ5VuI4Q==)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 11]]
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (10.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pins_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/pins/8
+Completed 302 Found in 119ms (ActiveRecord: 59.4ms | Allocations: 11778)
+
+
+Started GET "/pins/8" for 127.0.0.1 at 2022-11-05 14:20:41 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPin Load (0.4ms)[0m  [1m[34mSELECT "pins".* FROM "pins" WHERE "pins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:63:in `set_pin'
+  Rendering layout layouts/application.html.erb
+  Rendering pins/show.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.1ms | Allocations: 271)
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 8], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:20
+  Rendered pins/_pin.html.erb (Duration: 19.4ms | Allocations: 3521)
+  Rendered pins/show.html.erb within layouts/application (Duration: 21.9ms | Allocations: 4113)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 5802)
+Completed 200 OK in 33ms (Views: 27.4ms | ActiveRecord: 2.8ms | Allocations: 6573)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6d86105a2969d01e9b2b30f844fe5998c1a94d88/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:20:41 +0200
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6d86105a2969d01e9b2b30f844fe5998c1a94d88", "filename"=>"94958024"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[36m  Disk Storage (1.1ms) [0m[34mGenerated URL for file at key: 67q2w2q85v7825ii2hshdypjh276 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOamR4TW5jeWNUZzFkamM0TWpWcGFUSm9jMmhrZVhCcWFESTNOZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjI1OjQxLjE1NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--709ca86b46f098252e2e60c6cfafed80cfbf7e5d/94958024.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOamR4TW5jeWNUZzFkamM0TWpWcGFUSm9jMmhrZVhCcWFESTNOZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjI1OjQxLjE1NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--709ca86b46f098252e2e60c6cfafed80cfbf7e5d/94958024.jpeg
+Completed 302 Found in 10ms (ActiveRecord: 0.6ms | Allocations: 1356)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOamR4TW5jeWNUZzFkamM0TWpWcGFUSm9jMmhrZVhCcWFESTNOZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjI1OjQxLjE1NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--709ca86b46f098252e2e60c6cfafed80cfbf7e5d/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:20:41 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 161)
+
+
+Started GET "/pins" for 127.0.0.1 at 2022-11-05 14:20:54 +0200
+Processing by PinsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Load (0.6ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/pins/index.html.erb:6
+  [1m[36mActionText::RichText Load (0.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.3ms | Allocations: 268)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:20
+  Rendered pins/_pin.html.erb (Duration: 21.4ms | Allocations: 3526)
+  [1m[36mActionText::RichText Load (0.8ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.4ms | Allocations: 271)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 8], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:20
+  Rendered pins/_pin.html.erb (Duration: 20.9ms | Allocations: 3534)
+  Rendered pins/index.html.erb within layouts/application (Duration: 48.7ms | Allocations: 8099)
+  Rendered layout layouts/application.html.erb (Duration: 55.7ms | Allocations: 9796)
+Completed 200 OK in 58ms (Views: 53.0ms | ActiveRecord: 4.4ms | Allocations: 10066)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbXhvZUhkdVpUQmtOM3A0WWpoalltWnJPSGRtYnpodk1tOTBhZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTI6MjE6MDUuNzM0WiIsInB1ciI6ImJsb2Jfa2V5In19--98ac91fb59639b508c527e9c6088b4a9570b06ac/logo.png" for 127.0.0.1 at 2022-11-05 14:20:54 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOamR4TW5jeWNUZzFkamM0TWpWcGFUSm9jMmhrZVhCcWFESTNOZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjI1OjQxLjE1NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--709ca86b46f098252e2e60c6cfafed80cfbf7e5d/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:20:54 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 145)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 143)
+
+
+Started GET "/pins" for 127.0.0.1 at 2022-11-05 14:21:58 +0200
+Processing by PinsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pins/index.html.erb within layouts/application
+  [1m[36mPin Load (0.7ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/pins/index.html.erb:6
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 3.0ms | Allocations: 550)
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:20
+  Rendered pins/_pin.html.erb (Duration: 40.1ms | Allocations: 4707)
+  [1m[36mActionText::RichText Load (0.7ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Pin"], ["name", "description"], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:9
+  Rendered /home/anicetfantomas/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.2ms | Allocations: 271)
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 8], ["record_type", "Pin"], ["name", "pictures"]]
+  ↳ app/views/pins/_pin.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/pins/_pin.html.erb:20
+  Rendered pins/_pin.html.erb (Duration: 22.7ms | Allocations: 3687)
+  Rendered pins/index.html.erb within layouts/application (Duration: 78.0ms | Allocations: 9938)
+  Rendered layout layouts/application.html.erb (Duration: 87.4ms | Allocations: 11997)
+Completed 200 OK in 94ms (Views: 87.2ms | ActiveRecord: 5.2ms | Allocations: 12842)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3064c9705e38806aa346c2ab336da49fd9857a1d/logo.png" for 127.0.0.1 at 2022-11-05 14:21:59 +0200
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3064c9705e38806aa346c2ab336da49fd9857a1d", "filename"=>"logo"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: vlhxwne0d7zxb8cbfk8wfo8o2otj (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbXhvZUhkdVpUQmtOM3A0WWpoalltWnJPSGRtYnpodk1tOTBhZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTI6MjY6NTkuMDgxWiIsInB1ciI6ImJsb2Jfa2V5In19--2e3d4abc7460103863d517707d4534887f14056c/logo.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbXhvZUhkdVpUQmtOM3A0WWpoalltWnJPSGRtYnpodk1tOTBhZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTI6MjY6NTkuMDgxWiIsInB1ciI6ImJsb2Jfa2V5In19--2e3d4abc7460103863d517707d4534887f14056c/logo.png
+Completed 302 Found in 14ms (ActiveRecord: 0.4ms | Allocations: 1390)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOamR4TW5jeWNUZzFkamM0TWpWcGFUSm9jMmhrZVhCcWFESTNOZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjI1OjQxLjE1NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--709ca86b46f098252e2e60c6cfafed80cfbf7e5d/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:21:59 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbXhvZUhkdVpUQmtOM3A0WWpoalltWnJPSGRtYnpodk1tOTBhZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTI6MjY6NTkuMDgxWiIsInB1ciI6ImJsb2Jfa2V5In19--2e3d4abc7460103863d517707d4534887f14056c/logo.png" for 127.0.0.1 at 2022-11-05 14:21:59 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 153)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 161)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbXhvZUhkdVpUQmtOM3A0WWpoalltWnJPSGRtYnpodk1tOTBhZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14dloyOHVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkc2IyZHZMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMTEtMDVUMTI6MjY6NTkuMDgxWiIsInB1ciI6ImJsb2Jfa2V5In19--2e3d4abc7460103863d517707d4534887f14056c/logo.png" for 127.0.0.1 at 2022-11-05 14:22:00 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"logo"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 143)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOamR4TW5jeWNUZzFkamM0TWpWcGFUSm9jMmhrZVhCcWFESTNOZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEyOjI1OjQxLjE1NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--709ca86b46f098252e2e60c6cfafed80cfbf7e5d/94958024.jpeg" for 127.0.0.1 at 2022-11-05 14:22:03 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 143)
+
+
