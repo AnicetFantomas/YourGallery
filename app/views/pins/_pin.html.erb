@@ -4,4 +4,18 @@
     <%= pin.title %>
   </p>
 
+  <p>
+    <strong>Description:</strong>
+    <%= pin.body %>
+  </p>
+
+  <br />
+
+  <p>
+    <%= image_tag(pin.image) %>
+  </p>
+
+  <%= pin.pictures.each do |picture| %>
+    <%= picture %>
+  <% end %>
 </div>
