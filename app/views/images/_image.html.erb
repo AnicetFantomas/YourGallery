@@ -1,8 +1,19 @@
 <div id="<%= dom_id image %>">
+
+  <p>
+    <%= image_tag(image.image) %>
+  </p>
+
   <p>
     <strong>Title:</strong>
     <%= image.title %>
   </p>
+
+   <p>
+    <strong>saved date:</strong>
+    <%= image.created_at %>
+  </p>
+
 
   <p>
     <strong>Description:</strong>

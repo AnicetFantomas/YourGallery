@@ -15,3 +15,207 @@ Migrating to CreateImages (20221105125720)
   [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3611509626032200200)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-11-05 15:01:15 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ImagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.9ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  ↳ app/views/images/index.html.erb:6
+  Rendered images/index.html.erb within layouts/application (Duration: 16.5ms | Allocations: 5478)
+  Rendered layout layouts/application.html.erb (Duration: 400.9ms | Allocations: 76811)
+Completed 200 OK in 431ms (Views: 409.3ms | ActiveRecord: 0.9ms | Allocations: 82223)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2022-11-05 15:01:20 +0200
+Processing by ImagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/_form.html.erb (Duration: 16.5ms | Allocations: 4960)
+  Rendered images/new.html.erb within layouts/application (Duration: 19.6ms | Allocations: 5313)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 6502)
+Completed 200 OK in 53ms (Views: 25.0ms | ActiveRecord: 6.9ms | Allocations: 11245)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3611509626032200200)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActiveStorageTables (20221105130400)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (109.9ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (53.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (110.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (41.9ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (53.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (121.3ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (41.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221105130400"]]
+  [1m[36mTRANSACTION (24.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3611509626032200200)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3611509626032200200)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActionTextTables (20221105131725)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (163.7ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" bigserial primary key, "name" character varying NOT NULL, "body" text, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (53.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221105131725"]]
+  [1m[36mTRANSACTION (17.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3611509626032200200)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/images/new" for 127.0.0.1 at 2022-11-05 15:19:00 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ImagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/_form.html.erb (Duration: 3.8ms | Allocations: 1588)
+  Rendered images/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1914)
+  Rendered layout layouts/application.html.erb (Duration: 59.1ms | Allocations: 8052)
+Completed 200 OK in 70ms (Views: 61.5ms | ActiveRecord: 0.0ms | Allocations: 10971)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2022-11-05 15:31:07 +0200
+Processing by ImagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/_form.html.erb (Duration: 7.8ms | Allocations: 2151)
+  Rendered images/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 2493)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 4546)
+Completed 200 OK in 46ms (Views: 16.6ms | ActiveRecord: 8.1ms | Allocations: 11694)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2022-11-05 15:35:05 +0200
+Processing by ImagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/new.html.erb within layouts/application
+  Rendered images/_form.html.erb (Duration: 6.4ms | Allocations: 1830)
+  Rendered images/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2157)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 4170)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 5053)
+
+
+Started POST "/images" for 127.0.0.1 at 2022-11-05 15:35:43 +0200
+Processing by ImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "image"=>{"title"=>"My Birthday", "description"=>"Today is my birthday !!!!!!!!!!!", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fe4d7afb928 @tempfile=#<Tempfile:/tmp/RackMultipart20221105-42877-4j5cx2.jpeg>, @original_filename="94958024.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"94958024.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Image"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/images_controller.rb:27:in `block in create'
+  [1m[36mImage Create (1.3ms)[0m  [1m[32mINSERT INTO "images" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "My Birthday"], ["description", "Today is my birthday !!!!!!!!!!!"], ["created_at", "2022-11-05 13:35:43.555406"], ["updated_at", "2022-11-05 13:35:43.555406"]]
+  ↳ app/controllers/images_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/images_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/images_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Blob Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "i8zrz5ca5rclsqbtu8arohjfwmcb"], ["filename", "94958024.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 14294], ["checksum", "Z/IMZFo0sa+s1nzZ5VuI4Q=="], ["created_at", "2022-11-05 13:35:43.628161"]]
+  ↳ app/controllers/images_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Attachment Create (1.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Image"], ["record_id", 1], ["blob_id", 1], ["created_at", "2022-11-05 13:35:43.634540"]]
+  ↳ app/controllers/images_controller.rb:27:in `block in create'
+  [1m[36mImage Update (0.8ms)[0m  [1m[33mUPDATE "images" SET "updated_at" = $1 WHERE "images"."id" = $2[0m  [["updated_at", "2022-11-05 13:35:43.639962"], ["id", 1]]
+  ↳ app/controllers/images_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (16.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/images_controller.rb:27:in `block in create'
+[36m  Disk Storage (0.6ms) [0m[32mUploaded file to key: i8zrz5ca5rclsqbtu8arohjfwmcb (checksum: Z/IMZFo0sa+s1nzZ5VuI4Q==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 15c82204-76c3-4844-8eac-fbda1a121f74) to Async(default) with arguments: #<GlobalID:0x00007fe4d882e988 @uri=#<URI::GID gid://project/ActiveStorage::Blob/1>>
+Redirected to http://127.0.0.1:3000/images/1
+Completed 302 Found in 185ms (ActiveRecord: 37.0ms | Allocations: 39659)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [15c82204-76c3-4844-8eac-fbda1a121f74]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [15c82204-76c3-4844-8eac-fbda1a121f74] Performing ActiveStorage::AnalyzeJob (Job ID: 15c82204-76c3-4844-8eac-fbda1a121f74) from Async(default) enqueued at 2022-11-05T13:35:43Z with arguments: #<GlobalID:0x00007fe4d8823948 @uri=#<URI::GID gid://project/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [15c82204-76c3-4844-8eac-fbda1a121f74] Skipping image analysis because the ruby-vips gem isn't installed
+Started GET "/images/1" for 127.0.0.1 at 2022-11-05 15:35:43 +0200
+[ActiveJob] [ActiveStorage::AnalyzeJob] [15c82204-76c3-4844-8eac-fbda1a121f74]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [15c82204-76c3-4844-8eac-fbda1a121f74]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/images_controller.rb:63:in `set_image'
+  Rendering layout layouts/application.html.erb
+  Rendering images/show.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::AnalyzeJob] [15c82204-76c3-4844-8eac-fbda1a121f74]   [1m[36mTRANSACTION (28.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [15c82204-76c3-4844-8eac-fbda1a121f74] Performed ActiveStorage::AnalyzeJob (Job ID: 15c82204-76c3-4844-8eac-fbda1a121f74) from Async(default) in 51.53ms
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:4
+  Rendered images/_image.html.erb (Duration: 14.0ms | Allocations: 3525)
+  Rendered images/show.html.erb within layouts/application (Duration: 21.8ms | Allocations: 5567)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 7342)
+Completed 200 OK in 49ms (Views: 26.2ms | ActiveRecord: 10.1ms | Allocations: 11947)
+
+
+Started GET "/images" for 127.0.0.1 at 2022-11-05 15:36:04 +0200
+Processing by ImagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  ↳ app/views/images/index.html.erb:6
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:4
+  Rendered images/_image.html.erb (Duration: 14.2ms | Allocations: 1896)
+  Rendered images/index.html.erb within layouts/application (Duration: 22.3ms | Allocations: 3064)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 4748)
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 2.3ms | Allocations: 5120)
+
+
+Started GET "/images" for 127.0.0.1 at 2022-11-05 15:36:56 +0200
+Processing by ImagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  ↳ app/views/images/index.html.erb:6
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:4
+  Rendered images/_image.html.erb (Duration: 11.4ms | Allocations: 2280)
+  Rendered images/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 3671)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 5690)
+Completed 200 OK in 28ms (Views: 23.6ms | ActiveRecord: 2.0ms | Allocations: 6545)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--67ba4c36827585ed7b394d0dfdbc563dd4aef718/94958024.jpeg" for 127.0.0.1 at 2022-11-05 15:36:56 +0200
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--67ba4c36827585ed7b394d0dfdbc563dd4aef718", "filename"=>"94958024"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (2.1ms) [0m[34mGenerated URL for file at key: i8zrz5ca5rclsqbtu8arohjfwmcb (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVGg2Y25vMVkyRTFjbU5zYzNGaWRIVTRZWEp2YUdwbWQyMWpZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEzOjQxOjU2LjkwNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--90c0578f213f27991648a60e997509df7344041c/94958024.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVGg2Y25vMVkyRTFjbU5zYzNGaWRIVTRZWEp2YUdwbWQyMWpZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEzOjQxOjU2LjkwNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--90c0578f213f27991648a60e997509df7344041c/94958024.jpeg
+Completed 302 Found in 23ms (ActiveRecord: 0.6ms | Allocations: 2735)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVGg2Y25vMVkyRTFjbU5zYzNGaWRIVTRZWEp2YUdwbWQyMWpZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEzOjQxOjU2LjkwNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--90c0578f213f27991648a60e997509df7344041c/94958024.jpeg" for 127.0.0.1 at 2022-11-05 15:36:56 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 308)
+
+
+Started GET "/images" for 127.0.0.1 at 2022-11-05 15:37:53 +0200
+Processing by ImagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering images/index.html.erb within layouts/application
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  ↳ app/views/images/index.html.erb:6
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Image"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/images/_image.html.erb:4
+  Rendered images/_image.html.erb (Duration: 12.0ms | Allocations: 2340)
+  Rendered images/index.html.erb within layouts/application (Duration: 19.0ms | Allocations: 3729)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 5747)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 1.8ms | Allocations: 6635)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVGg2Y25vMVkyRTFjbU5zYzNGaWRIVTRZWEp2YUdwbWQyMWpZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWprME9UVTRNREkwTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KemswT1RVNE1ESTBMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTExLTA1VDEzOjQxOjU2LjkwNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--90c0578f213f27991648a60e997509df7344041c/94958024.jpeg" for 127.0.0.1 at 2022-11-05 15:37:53 +0200
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"94958024"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 172)
+
+
