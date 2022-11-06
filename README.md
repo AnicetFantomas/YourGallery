@@ -12,7 +12,7 @@ The YourGallery App upload all your images tagging them with a title, descriptio
 
 ### Cloning the project
 
- git clone https://github.com/sentayhu19/Recipe-app <Your-Build-Directory>
+ git clone https://github.com/AnicetFantomas/YourGallery <Your-Build-Directory>
 ``` 
 - cd YouGallery
 - rails s
