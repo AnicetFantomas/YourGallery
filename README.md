@@ -58,7 +58,7 @@ bundle install
 rspec
 ```
 
-## Authors
+## Author
 
 👤 **Anicet Murhula**
 
